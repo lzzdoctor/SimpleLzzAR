@@ -100,11 +100,11 @@ class liZhenZhuARsurgeryWidget(object):
             if state==True: return 
             q=slicer.util.messageBox("open the camera and AR for surgery?",standardButtons=qt.QMessageBox.Ok|qt.QMessageBox.Cancel)
             if q == qt.QMessageBox.Ok:
-                os.system('start microsoft.windows.camera:') #打开相机
+                os.system('start microsoft.windows.camera:') 
                 mainWindow.setWindowTitle("lizhenzhu@SlicerAR")
                 index=0.6
-                mainWindow.setWindowOpacity(index)  #半透明
-                slicer.app.layoutManager().threeDWidget(0).threeDController().BarWidget.CenterButton_Header.click() #模型居中
+                mainWindow.setWindowOpacity(index)  
+                slicer.app.layoutManager().threeDWidget(0).threeDController().BarWidget.CenterButton_Header.click() 
                 for i in ['Yellow','Red','Green']:
                     slicer.app.layoutManager().sliceWidget(i).setVisible(False)
                 state=True
@@ -122,8 +122,8 @@ class liZhenZhuARsurgeryWidget(object):
             if q == qt.QMessageBox.Ok:
                 state=False
                 mainWindow.setWindowTitle("slicer")
-                mainWindow.setWindowOpacity(1)  #半透明
-                #slicer.app.layoutManager().threeDWidget(0).threeDController().BarWidget.CenterButton_Header.click() #模型居中
+                mainWindow.setWindowOpacity(1)  
+                #slicer.app.layoutManager().threeDWidget(0).threeDController().BarWidget.CenterButton_Header.click()
                 for i in ['Yellow','Red','Green']:
                     slicer.app.layoutManager().sliceWidget(i).setVisible(True)
                 slicer.util.setToolbarsVisible(True)
@@ -142,7 +142,7 @@ class liZhenZhuARsurgeryWidget(object):
         
         #slider.valueChanged.connect(sliderRun)
         ########################################################
-        slicer.util.messageBox("all AR-function Button in 3D viewer Tools! You can contact me with timeanddoctor@gmail.com if any question,have a good day!"
+        slicer.util.messageBox("all AR-function Button in 3D viewer Tools! You can contact me with lizhenzhu1@sina.com if any question,have a good day!"
                                ,standardButtons=qt.QMessageBox.Ok|qt.QMessageBox.Cancel)
 
 
