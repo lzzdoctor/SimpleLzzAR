@@ -93,46 +93,6 @@ class liZhenZhuARsurgeryWidget(object):
     
 
 
-        
-        
-        def ar():
-            global index,state,mainWindow,panelDockWidget
-            if state==True: return 
-            q=slicer.util.messageBox("open the camera and AR for surgery?",standardButtons=qt.QMessageBox.Ok|qt.QMessageBox.Cancel)
-            if q == qt.QMessageBox.Ok:
-                os.system('start microsoft.windows.camera:') 
-                mainWindow.setWindowTitle("lizhenzhu@SlicerAR")
-                index=0.6
-                mainWindow.setWindowOpacity(index)  
-                slicer.app.layoutManager().threeDWidget(0).threeDController().BarWidget.CenterButton_Header.click() 
-                for i in ['Yellow','Red','Green']:
-                    slicer.app.layoutManager().sliceWidget(i).setVisible(False)
-                state=True
-                mainWindow.activateWindow()
-                slicer.util.setToolbarsVisible(False)
-                slicer.util.setMenuBarsVisible(False)
-                panelDockWidget.setVisible(False)
-                slicer.util.pythonShell().hide()
-            
-        def arexist():
-            global index,state,mainWindow,panelDockWidget
-            if state==False: return 
-            
-            q=slicer.util.messageBox("close AR?",standardButtons=qt.QMessageBox.Ok|qt.QMessageBox.Cancel)
-            if q == qt.QMessageBox.Ok:
-                state=False
-                mainWindow.setWindowTitle("slicer")
-                mainWindow.setWindowOpacity(1)  
-                #slicer.app.layoutManager().threeDWidget(0).threeDController().BarWidget.CenterButton_Header.click()
-                for i in ['Yellow','Red','Green']:
-                    slicer.app.layoutManager().sliceWidget(i).setVisible(True)
-                slicer.util.setToolbarsVisible(True)
-                slicer.util.setMenuBarsVisible(True)
-                panelDockWidget.setVisible(True)
-                slicer.util.pythonShell().show()
-        
-                
-                
        
 
         ###################################################################
